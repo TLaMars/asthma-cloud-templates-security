@@ -277,7 +277,7 @@
                         },
                         {
                             "name": "CosmosConnectionString",
-                            "value": "[concat('AccountEndpoint=https://', parameters('cosmosName').name, '.documents.azure.com:443/;AccountKey=', listKeys(variables('cosmosResourceId'), variables('apiVersion')).primaryMasterKey, ';')]"
+                            "value": "[concat('AccountEndpoint=https://', parameters('cosmosName'), '.documents.azure.com:443/;AccountKey=', listKeys(variables('cosmosResourceId'), variables('apiVersion')).primaryMasterKey, ';')]"
                         }
                     ]
                 },
