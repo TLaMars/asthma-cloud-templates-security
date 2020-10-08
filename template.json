@@ -264,6 +264,10 @@
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
                         },
                         {
+                            "name": "SqlConnectionString",
+                            "value": "[concat('Server=tcp:',reference(parameters('serverName')).fullyQualifiedDomainName,',1433;Initial Catalog=',parameters('databaseName'),';Persist Security Info=False;User ID=',reference(parameters('administratorLogin')),';Password=',reference(parameters('administratorLoginPassword')),';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
+                        },
+                        {
                             "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
                         },
@@ -661,11 +665,5 @@
         "privateEndpointSubnetResourceId": "[if(parameters('enablePrivateEndpoint'), resourceId(parameters('privateEndpointVnetSubscriptionId'), parameters('privateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('privateEndpointVnetName'), parameters('privateEndpointSubnetName')), '')]",
         "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('serverName')))]",
         "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]"
-    },
-    "outputs": {
-        "SqlConnectionString": {
-            "type": "string",
-            "value": "[concat('Server=tcp:',reference(parameters('serverName')).fullyQualifiedDomainName,',1433;Initial Catalog=',parameters('databaseName'),';Persist Security Info=False;User ID=',reference(parameters('administratorLogin')),';Password=',reference(parameters('administratorLoginPassword')),';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
-        }
     }
 }
