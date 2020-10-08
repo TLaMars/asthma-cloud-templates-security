@@ -274,10 +274,6 @@
                         {
                             "name": "WEBSITE_CONTENTSHARE",
                             "value": "[concat(toLower(parameters('funcName')), 'a47c')]"
-                        },
-                        {
-                            "name": "CosmosConnectionString",
-                            "value": "[concat('AccountEndpoint=https://', parameters('cosmosName').name, '.documents.azure.com:443/;AccountKey=', listKeys(variables('cosmosResourceId'), variables('apiVersion')).primaryMasterKey, ';')]"
                         }
                     ]
                 },
@@ -668,8 +664,6 @@
         "privateEndpointVnetId": "[if(parameters('enablePrivateEndpoint'), resourceId(parameters('privateEndpointVnetSubscriptionId'), parameters('privateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('privateEndpointVnetName')), '')]",
         "privateEndpointSubnetResourceId": "[if(parameters('enablePrivateEndpoint'), resourceId(parameters('privateEndpointVnetSubscriptionId'), parameters('privateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('privateEndpointVnetName'), parameters('privateEndpointSubnetName')), '')]",
         "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('serverName')))]",
-        "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]",
-        "cosmosResourceId": "[resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName'))]",
-        "apiVersion": "[providers('Microsoft.DocumentDB', 'databaseAccounts').apiVersions[0]]"
+        "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]"
     }
 }
