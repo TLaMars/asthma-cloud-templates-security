@@ -134,7 +134,7 @@
         "storageAccountType": {
             "value": ""
         },
-        "cosmosName": {
+        "name": {
             "value": "testing123"
         },
         "locationName": {

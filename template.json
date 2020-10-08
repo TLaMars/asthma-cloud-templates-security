@@ -328,13 +328,13 @@
             "apiVersion": "2020-04-01",
             "kind": "GlobalDocumentDB",
             "type": "Microsoft.DocumentDb/databaseAccounts",
-            "name": "[parameters('cosmosName')]",
+            "name": "[parameters('name')]",
             "location": "[parameters('location')]",
             "properties": {
                 "databaseAccountOfferType": "Standard",
                 "locations": [
                     {
-                        "id": "[concat(parameters('cosmosName'), '-', parameters('location'))]",
+                        "id": "[concat(parameters('name'), '-', parameters('location'))]",
                         "failoverPriority": 0,
                         "locationName": "[parameters('locationName')]"
                     }
