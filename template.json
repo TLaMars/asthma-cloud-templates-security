@@ -48,7 +48,7 @@
             "location": "[parameters('location')]",
             "tags": {},
             "dependsOn": [
-                "microsoft.insights/components/testingcidc",
+                "microsoft.insights/components/tesigng",
                 "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
             ],
@@ -66,11 +66,11 @@
                         },
                         {
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value": "[reference('microsoft.insights/components/testingcidc', '2015-05-01').InstrumentationKey]"
+                            "value": "[reference('microsoft.insights/components/tesigng', '2015-05-01').InstrumentationKey]"
                         },
                         {
                             "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-                            "value": "[reference('microsoft.insights/components/testingcidc', '2015-05-01').ConnectionString]"
+                            "value": "[reference('microsoft.insights/components/tesigng', '2015-05-01').ConnectionString]"
                         },
                         {
                             "name": "AzureWebJobsStorage",
@@ -82,7 +82,7 @@
                         },
                         {
                             "name": "WEBSITE_CONTENTSHARE",
-                            "value": "[concat(toLower(parameters('name')), 'a47c')]"
+                            "value": "[concat(toLower(parameters('name')), '9c6a')]"
                         }
                     ]
                 },
@@ -111,7 +111,7 @@
         },
         {
             "apiVersion": "2015-05-01",
-            "name": "testingcidc",
+            "name": "tesigng",
             "type": "microsoft.insights/components",
             "location": "westeurope",
             "tags": {},

@@ -6,22 +6,22 @@
             "value": "d9ac8541-8a6c-4596-8a22-1241109648ed"
         },
         "name": {
-            "value": "testingcidc"
+            "value": "tesigng"
         },
         "location": {
             "value": "West Europe"
         },
         "hostingPlanName": {
-            "value": "ASP-testing-91f6"
+            "value": "ASP-tesigng-a721"
         },
         "serverFarmResourceGroup": {
-            "value": "testing"
+            "value": "tesigng"
         },
         "alwaysOn": {
             "value": false
         },
         "storageAccountName": {
-            "value": "storageaccounttestib6e8"
+            "value": "storageaccounttesigb504"
         },
         "sku": {
             "value": "Dynamic"
