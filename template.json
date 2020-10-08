@@ -179,9 +179,57 @@
         "storageAccountType": {
             "type": "string",
             "defaultValue": ""
+        },
+        "name": {
+            "type": "string"
+        },
+        "locationName": {
+            "type": "string"
+        },
+        "defaultExperience": {
+            "type": "string"
+        },
+        "isZoneRedundant": {
+            "type": "string"
         }
     },
     "resources": [
+        {
+            "apiVersion": "2020-04-01",
+            "kind": "GlobalDocumentDB",
+            "type": "Microsoft.DocumentDb/databaseAccounts",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "databaseAccountOfferType": "Standard",
+                "locations": [
+                    {
+                        "id": "[concat(parameters('name'), '-', parameters('location'))]",
+                        "failoverPriority": 0,
+                        "locationName": "[parameters('locationName')]"
+                    }
+                ],
+                "backupPolicy": {
+                    "type": "Periodic",
+                    "periodicModeProperties": {
+                        "backupIntervalInMinutes": 240,
+                        "backupRetentionIntervalInHours": 8
+                    }
+                },
+                "isVirtualNetworkFilterEnabled": false,
+                "virtualNetworkRules": [],
+                "ipRules": [],
+                "dependsOn": [],
+                "enableMultipleWriteLocations": false,
+                "capabilities": [],
+                "enableFreeTier": false
+            },
+            "tags": {
+                "defaultExperience": "[parameters('defaultExperience')]",
+                "hidden-cosmos-mmspecial": "",
+                "CosmosAccountType": "Non-Production"
+            }
+        },
         {
             "condition": "[parameters('enableVA')]",
             "type": "Microsoft.Storage/storageAccounts",

@@ -133,6 +133,18 @@
         },
         "storageAccountType": {
             "value": ""
+        },
+        "name": {
+            "value": "testing123"
+        },
+        "locationName": {
+            "value": "West Europe"
+        },
+        "defaultExperience": {
+            "value": "Core (SQL)"
+        },
+        "isZoneRedundant": {
+            "value": "false"
         }
     }
 }
