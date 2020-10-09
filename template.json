@@ -62,9 +62,6 @@
         "sqlSkuName": {
             "type": "string"
         },
-        "sqlLocation": {
-            "type": "string"
-        },
         "sqlMaxSizeBytes": {
             "type": "int"
         },
