@@ -675,5 +675,21 @@
             "subscriptionId": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetSubscriptionId'), variables('subscriptionId'))]",
             "resourceGroup": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetResourceGroup'), variables('resourceGroupName'))]"
         }
-    ]
+    ],
+    "variables": {
+        "subscriptionId": "[subscription().subscriptionId]",
+        "resourceGroupName": "[resourceGroup().name]",
+        "uniqueStorage": "[uniqueString(variables('subscriptionId'), variables('resourceGroupName'), parameters('location'))]",
+        "storageName": "[tolower(concat('sqlva', variables('uniqueStorage')))]",
+        "privateEndpointContainerTemplateName": "[concat('PrivateEndpointContainer-', if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointNestedTemplateId'), ''))]",
+        "subnetPoliciesTemplateName": "[concat('SubnetPolicies-', if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointNestedTemplateId'), ''))]",
+        "privateEndpointTemplateName": "[concat('PrivateEndpoint-', if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointNestedTemplateId'), ''))]",
+        "deploymentTemplateApi": "2018-05-01",
+        "privateEndpointApi": "2019-04-01",
+        "privateEndpointId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointSubscriptionId'), parameters('sqlPrivateEndpointResourceGroup'), 'Microsoft.Network/privateEndpoints', parameters('sqlPrivateEndpointName')), '')]",
+        "privateEndpointVnetId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointVnetSubscriptionId'), parameters('sqlPrivateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('sqlPrivateEndpointVnetName')), '')]",
+        "privateEndpointSubnetResourceId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointVnetSubscriptionId'), parameters('sqlPrivateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('sqlPrivateEndpointVnetName'), parameters('sqlPrivateEndpointSubnetName')), '')]",
+        "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('sqlServerName')))]",
+        "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]"
+    }
 }
