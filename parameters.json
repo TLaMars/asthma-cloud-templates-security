@@ -45,7 +45,7 @@
             "value": "~3"
         },
         "sqlAdministratorLogin": {
-            "value": "testingSqlServer"
+            "value": null
         },
         "sqlAdministratorLoginPassword": {
             "value": null
