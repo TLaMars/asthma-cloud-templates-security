@@ -37,6 +37,9 @@
         },
         "funcNumberOfWorkers": {
             "value": "1"
+        },
+        "funcSlotName": {
+            "value": "testingProduction"
         }
     }
 } 

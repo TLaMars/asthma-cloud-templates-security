@@ -37,6 +37,9 @@
         },
         "funcNumberOfWorkers": {
             "type": "string"
+        },
+        "funcSlotName": {
+            "type": "string"
         }
     },
     "resources": [
@@ -132,6 +135,38 @@
             "properties": {
                 "supportsHttpsTrafficOnly": true
             }
+        },
+        {
+            "apiVersion":"2015-08-01",
+            "name":"development",
+            "type":"slots",
+            "tags":{
+                "displayName":"Development Deployment Slot"
+            },
+            "location":"[resourceGroup().location]",
+            "dependsOn":[
+                "[resourceId('Microsoft.Web/Sites', variables('funcName'))]"
+            ],
+            "properties":{
+            },
+            "resources":[
+                {
+                    "apiVersion":"2015-08-01",
+                    "name":"appsettings",
+                    "type":"config",
+                    "dependsOn":[
+                        "[resourceId('Microsoft.Web/sites', variables('funcName'))]",
+                        "[resourceId('Microsoft.Web/sites/slots', variables('funcName'), parameters('funcSlotName'))]"
+                    ],
+                    "properties":{
+                        "AzureWebJobsStorage":"[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('funcStorageAccountName')), '2015-05-01-preview').key1)]",
+                        "FUNCTIONS_EXTENSION_VERSION":"[parameters('FUNCTIONS_EXTENSION_VERSION')]",
+                        "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING":"[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('funcStorageAccountName')), '2015-05-01-preview').key1)]",
+                        "WEBSITE_CONTENTSHARE":"[concat(toLower(parameters('funcName')), 'development']",
+                        "StickySetting":"development"
+                    }
+                }
+            ]
         }
     ]
 }
