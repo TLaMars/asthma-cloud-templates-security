@@ -42,6 +42,12 @@
             "type": "string"
         }
     },
+    "variables": {
+        "functionAppStorageName": "[tolower(concat(parameters('funcName'),'func', uniqueString(resourceGroup().id)))]",
+        "functionAppName": "[concat(parameters('funcName'),'-Functions-', uniqueString(resourceGroup().id))]",
+        "hostingPlanName": "[concat(parameters('funcName'),'-Plan-', uniqueString(resourceGroup().id))]",
+        "appInsightsName": "[concat(parameters('funcName'),'-Functions-AI-', uniqueString(resourceGroup().id))]"
+    },
     "resources": [
         {
             "apiVersion": "2018-11-01",
@@ -91,7 +97,79 @@
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('funcServerFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('funcHostingPlanName'))]",
                 "clientAffinityEnabled": true
-            }
+            },
+            "resources": [
+                {
+                    "name": "slotConfigNames",
+                    "type": "config",
+                    "apiVersion": "2015-08-01",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+                    ],
+                    "tags": {
+                        "displayName": "slotConfigNames"
+                    },
+                    "properties": {
+                        "appSettingNames": [
+                            "StickySetting"
+                        ]
+                    }
+                },
+                {
+                    "apiVersion": "2015-08-01",
+                    "name": "appsettings",
+                    "type": "config",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]",
+                        "[resourceId('Microsoft.Insights/components', variables('appInsightsName'))]"
+                    ],
+                    "properties": {
+                        "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('functionAppStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('functionAppStorageName')), '2015-05-01-preview').key1)]",
+                        "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('functionAppStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('functionAppStorageName')), '2015-05-01-preview').key1)]",
+                        "FUNCTIONS_EXTENSION_VERSION": "[parameters('FUNCTIONS_EXTENSION_VERSION')]",
+                        "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('functionAppStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('functionAppStorageName')), '2015-05-01-preview').key1)]",
+                        "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('appName')), '8be4')]",
+                        "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
+                        "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightsName')), '2014-04-01').InstrumentationKey]",
+                        "StickySetting": "StuckToProduction"
+                    }
+                },
+                {
+                    "apiVersion": "2015-08-01",
+                    "name": "[parameters('slotName')]",
+                    "type": "slots",
+                    "tags": {
+                        "displayName": "[concat(parameters('slotName'), ' Deployment Slot')]"
+                    },
+                    "location": "[resourceGroup().location]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', variables('functionAppName'))]"
+                    ],
+                    "properties": {},
+                    "resources": [
+                        {
+                            "apiVersion": "2015-08-01",
+                            "name": "appsettings",
+                            "type": "config",
+                            "dependsOn": [
+                                "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]",
+                                "[resourceId('Microsoft.Insights/components', variables('appInsightsName'))]",
+                                "[resourceId('Microsoft.Web/sites/slots', variables('functionAppName'), parameters('slotName'))]"
+                            ],
+                            "properties": {
+                                "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('functionAppStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('functionAppStorageName')), '2015-05-01-preview').key1)]",
+                                "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('functionAppStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('functionAppStorageName')), '2015-05-01-preview').key1)]",
+                                "FUNCTIONS_EXTENSION_VERSION": "[parameters('FUNCTIONS_EXTENSION_VERSION')]",
+                                "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('functionAppStorageName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('functionAppStorageName')), '2015-05-01-preview').key1)]",
+                                "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('appName')), 'testing')]",
+                                "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
+                                "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightsName')), '2014-04-01').InstrumentationKey]",
+                                "StickySetting": "[concat('StuckTo',parameters('slotName'))]"
+                            }
+                        }
+                    ]
+                },
+            ]
         },
         {
             "apiVersion": "2018-11-01",
@@ -135,38 +213,6 @@
             "properties": {
                 "supportsHttpsTrafficOnly": true
             }
-        },
-        {
-            "apiVersion":"2015-08-01",
-            "name":"development",
-            "type":"slots",
-            "tags":{
-                "displayName":"Development Deployment Slot"
-            },
-            "location":"[resourceGroup().location]",
-            "dependsOn":[
-                "[resourceId('Microsoft.Web/Sites', variables('funcName'))]"
-            ],
-            "properties":{
-            },
-            "resources":[
-                {
-                    "apiVersion":"2015-08-01",
-                    "name":"appsettings",
-                    "type":"config",
-                    "dependsOn":[
-                        "[resourceId('Microsoft.Web/sites', variables('funcName'))]",
-                        "[resourceId('Microsoft.Web/sites/slots', variables('funcName'), parameters('funcSlotName'))]"
-                    ],
-                    "properties":{
-                        "AzureWebJobsStorage":"[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('funcStorageAccountName')), '2015-05-01-preview').key1)]",
-                        "FUNCTIONS_EXTENSION_VERSION":"[parameters('FUNCTIONS_EXTENSION_VERSION')]",
-                        "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING":"[concat('DefaultEndpointsProtocol=https;AccountName=',variables('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('funcStorageAccountName')), '2015-05-01-preview').key1)]",
-                        "WEBSITE_CONTENTSHARE":"[concat(toLower(parameters('funcName')), 'development']",
-                        "StickySetting":"development"
-                    }
-                }
-            ]
         }
     ]
 }
