@@ -2,182 +2,41 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "administratorLogin": {
-            "value": "testingSqlServer"
-        },
-        "administratorLoginPassword": {
-            "value": null
-        },
-        "collation": {
-            "value": "SQL_Latin1_General_CP1_CI_AS"
-        },
-        "databaseName": {
-            "value": "testing"
-        },
-        "tier": {
-            "value": "Basic"
-        },
-        "skuName": {
-            "value": "Basic"
-        },
-        "location": {
-            "value": "westeurope"
-        },
-        "maxSizeBytes": {
-            "value": 2147483648
-        },
-        "sampleName": {
-            "value": ""
-        },
-        "serverName": {
-            "value": "testgingsqlserver13"
-        },
-        "licenseType": {
-            "value": ""
-        },
-        "readScaleOut": {
-            "value": "Disabled"
-        },
-        "zoneRedundant": {
-            "value": false
-        },
-        "numberOfReplicas": {
-            "value": 0
-        },
-        "enableADS": {
-            "value": false
-        },
-        "allowAzureIps": {
-            "value": true
-        },
-        "allowClientIp": {
-            "value": false
-        },
-        "clientIpValue": {
-            "value": "84.106.178.21"
-        },
-        "databaseTags": {
-            "value": {}
-        },
-        "serverTags": {
-            "value": {}
-        },
-        "enableVA": {
-            "value": false
-        },
-        "useVAManagedIdentity": {
-            "value": false
-        },
-        "enablePrivateEndpoint": {
-            "value": false
-        },
-        "privateEndpointNestedTemplateId": {
-            "value": "pe-53973159-65fd-4b45-b4df-5b26c8c0e017"
-        },
-        "privateEndpointSubscriptionId": {
-            "value": ""
-        },
-        "privateEndpointResourceGroup": {
-            "value": ""
-        },
-        "privateEndpointName": {
-            "value": ""
-        },
-        "privateEndpointLocation": {
-            "value": ""
-        },
-        "privateEndpointSubnetId": {
-            "value": ""
-        },
-        "privateLinkServiceName": {
-            "value": ""
-        },
-        "privateLinkServiceServiceId": {
-            "value": ""
-        },
-        "privateEndpointVnetSubscriptionId": {
-            "value": ""
-        },
-        "privateEndpointVnetResourceGroup": {
-            "value": ""
-        },
-        "privateEndpointVnetName": {
-            "value": ""
-        },
-        "privateEndpointSubnetName": {
-            "value": ""
-        },
-        "enablePrivateDnsZone": {
-            "value": true
-        },
-        "privateLinkPrivateDnsZoneFQDN": {
-            "value": "privatelink.database.windows.net"
-        },
-        "privateEndpointDnsRecordUniqueId": {
-            "value": "53973159-65fd-4b45-b4df-5b26c8c0e01a"
-        },
-        "privateEndpointTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateEndpoint.json"
-        },
-        "privateDnsForPrivateEndpointTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpoint.json"
-        },
-        "privateDnsForPrivateEndpointNicTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpointNic.json"
-        },
-        "privateDnsForPrivateEndpointIpConfigTemplateLink": {
-            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpointIpConfig.json"
-        },
-        "clientIpRuleName": {
-            "value": "ClientIp-2020-10-8_14-40-28"
-        },
-        "storageAccountType": {
-            "value": ""
-        },
-        "cosmosName": {
-            "value": "testing123"
-        },
-        "locationName": {
-            "value": "West Europe"
-        },
-        "defaultExperience": {
-            "value": "Core (SQL)"
-        },
-        "isZoneRedundant": {
-            "value": "false"
-        },
         "subscriptionId": {
             "value": "d9ac8541-8a6c-4596-8a22-1241109648ed"
         },
         "funcName": {
             "value": "testingcidc"
         },
-        "hostingPlanName": {
+        "location": {
+            "value": "West Europe"
+        },
+        "funcHostingPlanName": {
             "value": "ASP-testing-91f6"
         },
-        "serverFarmResourceGroup": {
+        "funcServerFarmResourceGroup": {
             "value": "testing"
         },
-        "alwaysOn": {
+        "funcAlwaysOn": {
             "value": false
         },
-        "storageAccountName": {
+        "funcStorageAccountName": {
             "value": "storageaccounttestib6e8"
         },
-        "sku": {
+        "funcSku": {
             "value": "Dynamic"
         },
-        "skuCode": {
+        "funcSkuCode": {
             "value": "Y1"
         },
-        "workerSize": {
+        "funcWorkerSize": {
             "value": "0"
         },
-        "workerSizeId": {
+        "funcWorkerSizeId": {
             "value": "0"
         },
-        "numberOfWorkers": {
+        "funcNumberOfWorkers": {
             "value": "1"
         }
     }
-}
+} 
