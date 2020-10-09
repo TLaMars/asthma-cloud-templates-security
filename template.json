@@ -40,6 +40,9 @@
         },
         "funcSlotName": {
             "type": "string"
+        },
+        "funcExtensionVersion": {
+            "type": "string"
         }
     },
     "resources": [
@@ -61,7 +64,7 @@
                     "appSettings": [
                         {
                             "name": "FUNCTIONS_EXTENSION_VERSION",
-                            "value": "~3"
+                            "value": "[parameters('funcExtensionVersion')]"
                         },
                         {
                             "name": "FUNCTIONS_WORKER_RUNTIME",
@@ -120,7 +123,7 @@
                     "properties": {
                         "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
                         "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
-                        "FUNCTIONS_EXTENSION_VERSION": "[parameters('FUNCTIONS_EXTENSION_VERSION')]",
+                        "FUNCTIONS_EXTENSION_VERSION": "[parameters('funcExtensionVersion')]",
                         "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
                         "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('funcName')), '8be4')]",
                         "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
@@ -153,7 +156,7 @@
                             "properties": {
                                 "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
                                 "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
-                                "FUNCTIONS_EXTENSION_VERSION": "[parameters('FUNCTIONS_EXTENSION_VERSION')]",
+                                "FUNCTIONS_EXTENSION_VERSION": "[parameters('funcExtensionVersion')]",
                                 "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
                                 "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('funcName')), 'testing')]",
                                 "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",

@@ -40,6 +40,9 @@
         },
         "funcSlotName": {
             "value": "testingProduction"
+        },
+        "funcExtensionVersion": {
+            "value": "~3"
         }
     }
 } 
