@@ -5,11 +5,11 @@
         "subscriptionId": {
             "value": "d9ac8541-8a6c-4596-8a22-1241109648ed"
         },
-        "funcName": {
-            "value": "testingcidc"
-        },
         "location": {
             "value": "West Europe"
+        },
+        "funcName": {
+            "value": "testingcidc"
         },
         "funcHostingPlanName": {
             "value": "ASP-testing-91f6"
@@ -43,6 +43,135 @@
         },
         "funcExtensionVersion": {
             "value": "~3"
+        },
+        "sqlAdministratorLogin": {
+            "value": "testingSqlServer"
+        },
+        "sqlAdministratorLoginPassword": {
+            "value": null
+        },
+        "sqlCollation": {
+            "value": "SQL_Latin1_General_CP1_CI_AS"
+        },
+        "sqlDatabaseName": {
+            "value": "testing"
+        },
+        "sqlTier": {
+            "value": "Basic"
+        },
+        "sqlSkuName": {
+            "value": "Basic"
+        },
+        "sqlMaxSizeBytes": {
+            "value": 2147483648
+        },
+        "sqlSampleName": {
+            "value": ""
+        },
+        "sqlServerName": {
+            "value": "testgingsqlserver13"
+        },
+        "sqlLicenseType": {
+            "value": ""
+        },
+        "sqlReadScaleOut": {
+            "value": "Disabled"
+        },
+        "sqlZoneRedundant": {
+            "value": false
+        },
+        "sqlNumberOfReplicas": {
+            "value": 0
+        },
+        "sqlEnableADS": {
+            "value": false
+        },
+        "sqlAllowAzureIps": {
+            "value": true
+        },
+        "sqlAllowClientIp": {
+            "value": false
+        },
+        "sqlClientIpValue": {
+            "value": "84.106.178.21"
+        },
+        "sqlDatabaseTags": {
+            "value": {}
+        },
+        "sqlServerTags": {
+            "value": {}
+        },
+        "sqlEnableVA": {
+            "value": false
+        },
+        "sqlUseVAManagedIdentity": {
+            "value": false
+        },
+        "sqlEnablePrivateEndpoint": {
+            "value": false
+        },
+        "sqlPrivateEndpointNestedTemplateId": {
+            "value": "pe-53973159-65fd-4b45-b4df-5b26c8c0e017"
+        },
+        "sqlPrivateEndpointSubscriptionId": {
+            "value": ""
+        },
+        "sqlPrivateEndpointResourceGroup": {
+            "value": ""
+        },
+        "sqlPrivateEndpointName": {
+            "value": ""
+        },
+        "sqlPrivateEndpointLocation": {
+            "value": ""
+        },
+        "sqlPrivateEndpointSubnetId": {
+            "value": ""
+        },
+        "sqlPrivateLinkServiceName": {
+            "value": ""
+        },
+        "sqlPrivateLinkServiceServiceId": {
+            "value": ""
+        },
+        "sqlPrivateEndpointVnetSubscriptionId": {
+            "value": ""
+        },
+        "sqlPrivateEndpointVnetResourceGroup": {
+            "value": ""
+        },
+        "sqlPrivateEndpointVnetName": {
+            "value": ""
+        },
+        "sqlPrivateEndpointSubnetName": {
+            "value": ""
+        },
+        "sqlEnablePrivateDnsZone": {
+            "value": true
+        },
+        "sqlPrivateLinkPrivateDnsZoneFQDN": {
+            "value": "privatelink.database.windows.net"
+        },
+        "sqlPrivateEndpointDnsRecordUniqueId": {
+            "value": "53973159-65fd-4b45-b4df-5b26c8c0e01a"
+        },
+        "sqlPrivateEndpointTemplateLink": {
+            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateEndpoint.json"
+        },
+        "sqlPrivateDnsForPrivateEndpointTemplateLink": {
+            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpoint.json"
+        },
+        "sqlPrivateDnsForPrivateEndpointNicTemplateLink": {
+            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpointNic.json"
+        },
+        "sqlPrivateDnsForPrivateEndpointIpConfigTemplateLink": {
+            "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpointIpConfig.json"
+        },
+        "sqlClientIpRuleName": {
+            "value": "ClientIp-2020-10-8_14-40-28"
+        },
+        "sqlStorageAccountType": {
+            "value": ""
         }
     }
 } 
