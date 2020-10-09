@@ -403,7 +403,7 @@
                     "apiVersion": "2018-09-01-preview",
                     "name": "[concat(variables('storageName'), '/Microsoft.Authorization/', variables('uniqueRoleGuid') )]",
                     "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers', parameters(''))]",
+                        "[resourceId('Microsoft.Sql/servers', parameters('sqlServerName'))]",
                         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))]"
                     ],
                     "properties": {
