@@ -172,6 +172,21 @@
         },
         "sqlStorageAccountType": {
             "value": ""
+        },
+        "cosmosName": {
+            "value": null
+        },
+        "cosmosLocation": {
+            "value": "westeurope"
+        },
+        "cosmosLocationName": {
+            "value": "West Europe"
+        },
+        "cosmosDefaultExperience": {
+            "value": "Core (SQL)"
+        },
+        "cosmosIsZoneRedundant": {
+            "value": "false"
         }
     }
 } 

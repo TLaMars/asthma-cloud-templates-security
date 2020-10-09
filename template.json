@@ -218,6 +218,21 @@
         "sqlStorageAccountType": {
             "type": "string",
             "defaultValue": ""
+        },
+        "cosmosName": {
+            "type": "string"
+        },
+        "cosmosLocation": {
+            "type": "string"
+        },
+        "cosmosLocationName": {
+            "type": "string"
+        },
+        "cosmosDefaultExperience": {
+            "type": "string"
+        },
+        "cosmosIsZoneRedundant": {
+            "type": "string"
         }
     },
     "resources": [
@@ -674,6 +689,58 @@
             },
             "subscriptionId": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetSubscriptionId'), variables('subscriptionId'))]",
             "resourceGroup": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetResourceGroup'), variables('resourceGroupName'))]"
+        },
+        {
+            "apiVersion": "2020-04-01",
+            "kind": "GlobalDocumentDB",
+            "type": "Microsoft.DocumentDb/databaseAccounts",
+            "name": "[parameters('cosmosName')]",
+            "location": "[parameters('cosmosLocation')]",
+            "properties": {
+                "databaseAccountOfferType": "Standard",
+                "locations": [
+                    {
+                        "id": "[concat(parameters('cosmosName'), '-', parameters('cosmosLocation'))]",
+                        "failoverPriority": 0,
+                        "locationName": "[parameters('cosmosLocationName')]"
+                    }
+                ],
+                "backupPolicy": {
+                    "type": "Periodic",
+                    "periodicModeProperties": {
+                        "backupIntervalInMinutes": 240,
+                        "backupRetentionIntervalInHours": 8
+                    }
+                },
+                "isVirtualNetworkFilterEnabled": false,
+                "virtualNetworkRules": [],
+                "ipRules": [
+                    {
+                        "ipAddressOrRange": "104.42.195.92"
+                    },
+                    {
+                        "ipAddressOrRange": "40.76.54.131"
+                    },
+                    {
+                        "ipAddressOrRange": "52.176.6.30"
+                    },
+                    {
+                        "ipAddressOrRange": "52.169.50.45"
+                    },
+                    {
+                        "ipAddressOrRange": "52.187.184.26"
+                    }
+                ],
+                "dependsOn": [],
+                "enableMultipleWriteLocations": false,
+                "capabilities": [],
+                "enableFreeTier": true
+            },
+            "tags": {
+                "defaultExperience": "[parameters('cosmosDefaultExperience')]",
+                "hidden-cosmos-mmspecial": "",
+                "CosmosAccountType": "Production"
+            }
         }
     ],
     "variables": {
