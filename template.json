@@ -48,7 +48,7 @@
             "location": "[parameters('location')]",
             "tags": {},
             "dependsOn": [
-                "microsoft.insights/components/', parameters('funcName')",
+                "[concat('microsoft.insights/components/', parameters('funcName'))]",
                 "[concat('Microsoft.Web/serverfarms/', parameters('funcHostingPlanName'))]",
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('funcStorageAccountName'))]"
             ],
