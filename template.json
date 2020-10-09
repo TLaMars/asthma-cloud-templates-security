@@ -44,181 +44,178 @@
         "funcExtensionVersion": {
             "type": "string"
         },
-        "administratorLogin": {
+        "sqlAdministratorLogin": {
             "type": "string"
         },
-        "administratorLoginPassword": {
+        "sqlAdministratorLoginPassword": {
             "type": "securestring"
         },
-        "collation": {
+        "sqlCollation": {
             "type": "string"
         },
-        "databaseName": {
+        "sqlDatabaseName": {
             "type": "string"
         },
-        "tier": {
+        "sqlTier": {
             "type": "string"
         },
-        "skuName": {
+        "sqlSkuName": {
             "type": "string"
         },
-        "location": {
-            "type": "string"
-        },
-        "maxSizeBytes": {
+        "sqlMaxSizeBytes": {
             "type": "int"
         },
-        "serverName": {
+        "sqlServerName": {
             "type": "string"
         },
-        "sampleName": {
+        "sqlSampleName": {
             "type": "string",
             "defaultValue": ""
         },
-        "zoneRedundant": {
+        "sqlZoneRedundant": {
             "type": "bool",
             "defaultValue": false
         },
-        "licenseType": {
+        "sqlLicenseType": {
             "type": "string",
             "defaultValue": ""
         },
-        "readScaleOut": {
+        "sqlReadScaleOut": {
             "type": "string",
             "defaultValue": "Disabled"
         },
-        "numberOfReplicas": {
+        "sqlNumberOfReplicas": {
             "type": "int",
             "defaultValue": 0
         },
-        "minCapacity": {
+        "sqlMinCapacity": {
             "type": "string",
             "defaultValue": ""
         },
-        "autoPauseDelay": {
+        "sqlAutoPauseDelay": {
             "type": "string",
             "defaultValue": ""
         },
-        "enableADS": {
+        "sqlEnableADS": {
             "type": "bool",
             "defaultValue": false
         },
-        "allowAzureIps": {
+        "sqlAllowAzureIps": {
             "type": "bool",
             "defaultValue": true
         },
-        "databaseTags": {
+        "sqlDatabaseTags": {
             "type": "object",
             "defaultValue": {}
         },
-        "serverTags": {
+        "sqlServerTags": {
             "type": "object",
             "defaultValue": {}
         },
-        "enableVA": {
+        "sqlEnableVA": {
             "type": "bool",
             "defaultValue": false
         },
-        "useVAManagedIdentity": {
+        "sqlUseVAManagedIdentity": {
             "type": "bool",
             "defaultValue": false,
             "metadata": {
                 "description": "To enable vulnerability assessments, the user deploying this template must have an administrator or owner permissions."
             }
         },
-        "enablePrivateEndpoint": {
+        "sqlEnablePrivateEndpoint": {
             "type": "bool",
             "defaultValue": false
         },
-        "privateEndpointNestedTemplateId": {
+        "sqlPrivateEndpointNestedTemplateId": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointSubscriptionId": {
+        "sqlPrivateEndpointSubscriptionId": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointResourceGroup": {
+        "sqlPrivateEndpointResourceGroup": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointName": {
+        "sqlPrivateEndpointName": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointLocation": {
+        "sqlPrivateEndpointLocation": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointSubnetId": {
+        "sqlPrivateEndpointSubnetId": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateLinkServiceName": {
+        "sqlPrivateLinkServiceName": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateLinkServiceServiceId": {
+        "sqlPrivateLinkServiceServiceId": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointVnetSubscriptionId": {
+        "sqlPrivateEndpointVnetSubscriptionId": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointVnetResourceGroup": {
+        "sqlPrivateEndpointVnetResourceGroup": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointVnetName": {
+        "sqlPrivateEndpointVnetName": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointSubnetName": {
+        "sqlPrivateEndpointSubnetName": {
             "type": "string",
             "defaultValue": ""
         },
-        "enablePrivateDnsZone": {
+        "sqlEnablePrivateDnsZone": {
             "type": "bool",
             "defaultValue": false
         },
-        "privateLinkPrivateDnsZoneFQDN": {
+        "sqlPrivateLinkPrivateDnsZoneFQDN": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointDnsRecordUniqueId": {
+        "sqlPrivateEndpointDnsRecordUniqueId": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateEndpointTemplateLink": {
+        "sqlPrivateEndpointTemplateLink": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateDnsForPrivateEndpointTemplateLink": {
+        "sqlPrivateDnsForPrivateEndpointTemplateLink": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateDnsForPrivateEndpointNicTemplateLink": {
+        "sqlPrivateDnsForPrivateEndpointNicTemplateLink": {
             "type": "string",
             "defaultValue": ""
         },
-        "privateDnsForPrivateEndpointIpConfigTemplateLink": {
+        "sqlPrivateDnsForPrivateEndpointIpConfigTemplateLink": {
             "type": "string",
             "defaultValue": ""
         },
-        "allowClientIp": {
+        "sqlAllowClientIp": {
             "type": "bool",
             "defaultValue": false
         },
-        "clientIpRuleName": {
+        "sqlClientIpRuleName": {
             "type": "string",
             "defaultValue": ""
         },
-        "clientIpValue": {
+        "sqlClientIpValue": {
             "type": "string",
             "defaultValue": ""
         },
-        "storageAccountType": {
+        "sqlStorageAccountType": {
             "type": "string",
             "defaultValue": ""
         }
@@ -390,7 +387,7 @@
             }
         },
         {
-            "condition": "[parameters('enableVA')]",
+            "condition": "[parameters('sqlEnableVA')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2019-04-01",
             "name": "[variables('storageName')]",
@@ -401,17 +398,17 @@
             "kind": "StorageV2",
             "resources": [
                 {
-                    "condition": "[parameters('useVAManagedIdentity')]",
+                    "condition": "[parameters('sqlUseVAManagedIdentity')]",
                     "type": "Microsoft.Storage/storageAccounts/providers/roleAssignments",
                     "apiVersion": "2018-09-01-preview",
                     "name": "[concat(variables('storageName'), '/Microsoft.Authorization/', variables('uniqueRoleGuid') )]",
                     "dependsOn": [
-                        "[resourceId('Microsoft.Sql/servers', parameters('serverName'))]",
+                        "[resourceId('Microsoft.Sql/servers', parameters('sqlServerName'))]",
                         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))]"
                     ],
                     "properties": {
                         "roleDefinitionId": "[variables('StorageBlobContributor')]",
-                        "principalId": "[reference(resourceId('Microsoft.Sql/servers', parameters('serverName')), '2018-06-01-preview', 'Full').identity.principalId]",
+                        "principalId": "[reference(resourceId('Microsoft.Sql/servers', parameters('sqlServerName')), '2018-06-01-preview', 'Full').identity.principalId]",
                         "scope": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))]",
                         "principalType": "ServicePrincipal"
                     }
@@ -422,46 +419,46 @@
             "apiVersion": "2015-05-01-preview",
             "type": "Microsoft.Sql/servers",
             "location": "[parameters('location')]",
-            "tags": "[parameters('serverTags')]",
-            "name": "[parameters('serverName')]",
+            "tags": "[parameters('sqlServerTags')]",
+            "name": "[parameters('sqlServerName')]",
             "properties": {
-                "administratorLogin": "[parameters('administratorLogin')]",
-                "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
+                "administratorLogin": "[parameters('sqlAdministratorLogin')]",
+                "administratorLoginPassword": "[parameters('sqlAdministratorLoginPassword')]",
                 "version": "12.0"
             },
-            "identity": "[if(and(parameters('enableVA'),parameters('useVAManagedIdentity')), json('{\"type\":\"SystemAssigned\"}'), json('null'))]",
+            "identity": "[if(and(parameters('sqlEnableVA'),parameters('sqlUseVAManagedIdentity')), json('{\"type\":\"SystemAssigned\"}'), json('null'))]",
             "resources": [
                 {
                     "apiVersion": "2018-06-01-preview",
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
+                        "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]"
                     ],
                     "location": "[parameters('location')]",
-                    "tags": "[parameters('databaseTags')]",
-                    "name": "[parameters('databaseName')]",
+                    "tags": "[parameters('sqlDatabaseTags')]",
+                    "name": "[parameters('sqlDatabaseName')]",
                     "properties": {
                         "collation": "[parameters('collation')]",
-                        "maxSizeBytes": "[parameters('maxSizeBytes')]",
-                        "sampleName": "[parameters('sampleName')]",
-                        "zoneRedundant": "[parameters('zoneRedundant')]",
-                        "licenseType": "[parameters('licenseType')]",
-                        "readScale": "[parameters('readScaleOut')]",
-                        "readReplicaCount": "[parameters('numberOfReplicas')]",
-                        "minCapacity": "[parameters('minCapacity')]",
-                        "autoPauseDelay": "[parameters('autoPauseDelay')]",
-                        "storageAccountType": "[parameters('storageAccountType')]"
+                        "maxSizeBytes": "[parameters('sqlMaxSizeBytes')]",
+                        "sampleName": "[parameters('sqlSampleName')]",
+                        "zoneRedundant": "[parameters('sqlZoneRedundant')]",
+                        "licenseType": "[parameters('sqlLicenseType')]",
+                        "readScale": "[parameters('sqlReadScaleOut')]",
+                        "readReplicaCount": "[parameters('sqlNumberOfReplicas')]",
+                        "minCapacity": "[parameters('sqlMinCapacity')]",
+                        "autoPauseDelay": "[parameters('sqlAutoPauseDelay')]",
+                        "storageAccountType": "[parameters('sqlStorageAccountType')]"
                     },
                     "sku": {
-                        "name": "[parameters('skuName')]",
-                        "tier": "[parameters('tier')]"
+                        "name": "[parameters('sqlSkuName')]",
+                        "tier": "[parameters('sqlTier')]"
                     },
                     "type": "databases"
                 },
                 {
-                    "condition": "[parameters('allowAzureIps')]",
+                    "condition": "[parameters('sqlAllowAzureIps')]",
                     "apiVersion": "2014-04-01-preview",
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
+                        "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]"
                     ],
                     "location": "[parameters('location')]",
                     "name": "AllowAllWindowsAzureIps",
@@ -472,27 +469,27 @@
                     "type": "firewallrules"
                 },
                 {
-                    "condition": "[parameters('allowClientIp')]",
+                    "condition": "[parameters('sqlAllowClientIp')]",
                     "apiVersion": "2014-04-01-preview",
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', parameters('serverName'))]"
+                        "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]"
                     ],
                     "location": "[parameters('location')]",
-                    "name": "[parameters('clientIpRuleName')]",
+                    "name": "[parameters('sqlClientIpRuleName')]",
                     "properties": {
-                        "endIpAddress": "[parameters('clientIpValue')]",
-                        "startIpAddress": "[parameters('clientIpValue')]"
+                        "endIpAddress": "[parameters('sqlClientIpValue')]",
+                        "startIpAddress": "[parameters('sqlClientIpValue')]"
                     },
                     "type": "firewallrules"
                 },
                 {
-                    "condition": "[parameters('enableADS')]",
+                    "condition": "[parameters('sqlEnableADS')]",
                     "apiVersion": "2017-03-01-preview",
                     "type": "securityAlertPolicies",
                     "name": "Default",
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', parameters('serverName'))]",
-                        "[concat('Microsoft.Sql/servers/', parameters('serverName'), '/databases/', parameters('databaseName'))]"
+                        "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]",
+                        "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'), '/databases/', parameters('sqlDatabaseName'))]"
                     ],
                     "properties": {
                         "state": "Enabled",
@@ -502,13 +499,13 @@
                     }
                 },
                 {
-                    "condition": "[parameters('enableVA')]",
+                    "condition": "[parameters('sqlEnableVA')]",
                     "apiVersion": "2018-06-01-preview",
                     "type": "vulnerabilityAssessments",
                     "name": "Default",
                     "properties": {
-                        "storageContainerPath": "[if(parameters('enableVA'), concat(reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))).primaryEndpoints.blob, 'vulnerability-assessment'), '')]",
-                        "storageAccountAccessKey": "[if(and(parameters('enableVA'),not(parameters('useVAManagedIdentity'))), listKeys(variables('storageName'), '2018-02-01').keys[0].value, '')]",
+                        "storageContainerPath": "[if(parameters('sqlEnableVA'), concat(reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))).primaryEndpoints.blob, 'vulnerability-assessment'), '')]",
+                        "storageAccountAccessKey": "[if(and(parameters('sqlEnableVA'),not(parameters('sqlUseVAManagedIdentity'))), listKeys(variables('storageName'), '2018-02-01').keys[0].value, '')]",
                         "recurringScans": {
                             "isEnabled": true,
                             "emailSubscriptionAdmins": true,
@@ -516,15 +513,15 @@
                         }
                     },
                     "dependsOn": [
-                        "[concat('Microsoft.Sql/servers/', parameters('serverName'))]",
+                        "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'))]",
                         "[concat('Microsoft.Storage/storageAccounts/', variables('storageName'))]",
-                        "[concat('Microsoft.Sql/servers/', parameters('serverName'), '/securityAlertPolicies/Default')]"
+                        "[concat('Microsoft.Sql/servers/', parameters('sqlServerName'), '/securityAlertPolicies/Default')]"
                     ]
                 }
             ]
         },
         {
-            "condition": "[parameters('enablePrivateEndpoint')]",
+            "condition": "[parameters('sqlEnablePrivateEndpoint')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "[variables('deploymentTemplateApi')]",
             "name": "[variables('subnetPoliciesTemplateName')]",
@@ -536,8 +533,8 @@
                     "resources": [
                         {
                             "apiVersion": "[variables('privateEndpointApi')]",
-                            "name": "[concat(parameters('privateEndpointVnetName'), '/', parameters('privateEndpointSubnetName'))]",
-                            "location": "[parameters('privateEndpointLocation')]",
+                            "name": "[concat(parameters('sqlPrivateEndpointVnetName'), '/', parameters('sqlPrivateEndpointSubnetName'))]",
+                            "location": "[parameters('sqlPrivateEndpointLocation')]",
                             "properties": {
                                 "privateEndpointNetworkPolicies": "Disabled"
                             },
@@ -546,29 +543,29 @@
                     ]
                 }
             },
-            "subscriptionId": "[if(parameters('enablePrivateEndpoint'), parameters('privateEndpointVnetSubscriptionId'), variables('subscriptionId'))]",
-            "resourceGroup": "[if(parameters('enablePrivateEndpoint'), parameters('privateEndpointVnetResourceGroup'), variables('resourceGroupName'))]"
+            "subscriptionId": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetSubscriptionId'), variables('subscriptionId'))]",
+            "resourceGroup": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetResourceGroup'), variables('resourceGroupName'))]"
         },
         {
-            "condition": "[parameters('enablePrivateEndpoint')]",
+            "condition": "[parameters('sqlEnablePrivateEndpoint')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "[variables('deploymentTemplateApi')]",
             "name": "[variables('privateEndpointTemplateName')]",
             "dependsOn": [
-                "[resourceId(variables('subscriptionId'), variables('resourceGroupName'), 'Microsoft.Sql/servers/databases/', parameters('serverName'), parameters('databaseName'))]",
+                "[resourceId(variables('subscriptionId'), variables('resourceGroupName'), 'Microsoft.Sql/servers/databases/', parameters('sqlServerName'), parameters('sqlDatabaseName'))]",
                 "[variables('subnetPoliciesTemplateName')]"
             ],
             "properties": {
                 "mode": "Incremental",
                 "parameters": {
                     "privateEndpointName": {
-                        "value": "[parameters('privateEndpointName')]"
+                        "value": "[parameters('sqlPrivateEndpointName')]"
                     },
                     "privateEndpointConnectionId": {
                         "value": ""
                     },
                     "privateEndpointConnectionName": {
-                        "value": "[parameters('privateLinkServiceName')]"
+                        "value": "[parameters('sqlPrivateLinkServiceName')]"
                     },
                     "privateEndpointId": {
                         "value": "[variables('privateEndpointId')]"
@@ -577,7 +574,7 @@
                         "value": "[variables('privateEndpointApi')]"
                     },
                     "privateLinkServiceId": {
-                        "value": "[parameters('privateLinkServiceServiceId')]"
+                        "value": "[parameters('sqlPrivateLinkServiceServiceId')]"
                     },
                     "groupId": {
                         "value": "SqlServer"
@@ -586,7 +583,7 @@
                         "value": "[variables('privateEndpointSubnetResourceId')]"
                     },
                     "location": {
-                        "value": "[parameters('privateEndpointLocation')]"
+                        "value": "[parameters('sqlPrivateEndpointLocation')]"
                     },
                     "tags": {
                         "value": {}
@@ -594,17 +591,17 @@
                 },
                 "templatelink": {
                     "contentVersion": "1.0.0.0",
-                    "uri": "[parameters('privateEndpointTemplateLink')]"
+                    "uri": "[parameters('sqlPrivateEndpointTemplateLink')]"
                 }
             },
-            "subscriptionId": "[if(parameters('enablePrivateEndpoint'), parameters('privateEndpointSubscriptionId'), variables('subscriptionId'))]",
-            "resourceGroup": "[if(parameters('enablePrivateEndpoint'), parameters('privateEndpointResourceGroup'), variables('resourceGroupName'))]"
+            "subscriptionId": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointSubscriptionId'), variables('subscriptionId'))]",
+            "resourceGroup": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointResourceGroup'), variables('resourceGroupName'))]"
         },
         {
-            "condition": "[and(parameters('enablePrivateEndpoint'), parameters('enablePrivateDnsZone'))]",
+            "condition": "[and(parameters('sqlEnablePrivateEndpoint'), parameters('sqlEnablePrivateDnsZone'))]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "[variables('deploymentTemplateApi')]",
-            "name": "[concat('PrivateDns-', parameters('privateEndpointNestedTemplateId'))]",
+            "name": "[concat('PrivateDns-', parameters('sqlPrivateEndpointNestedTemplateId'))]",
             "dependsOn": [
                 "[variables('privateEndpointTemplateName')]"
             ],
@@ -617,7 +614,7 @@
                         {
                             "type": "Microsoft.Network/privateDnsZones",
                             "apiVersion": "2018-09-01",
-                            "name": "[parameters('privateLinkPrivateDnsZoneFQDN')]",
+                            "name": "[parameters('sqlPrivateLinkPrivateDnsZoneFQDN')]",
                             "location": "global",
                             "tags": {},
                             "properties": {}
@@ -625,10 +622,10 @@
                         {
                             "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
                             "apiVersion": "2018-09-01",
-                            "name": "[concat(parameters('privateLinkPrivateDnsZoneFQDN'), '/', uniqueString(variables('privateEndpointVnetId')))]",
+                            "name": "[concat(parameters('sqlPrivateLinkPrivateDnsZoneFQDN'), '/', uniqueString(variables('privateEndpointVnetId')))]",
                             "location": "global",
                             "dependsOn": [
-                                "[parameters('privateLinkPrivateDnsZoneFQDN')]"
+                                "[parameters('sqlPrivateLinkPrivateDnsZoneFQDN')]"
                             ],
                             "properties": {
                                 "virtualNetwork": {
@@ -639,32 +636,32 @@
                         },
                         {
                             "apiVersion": "[variables('deploymentTemplateApi')]",
-                            "name": "[concat('EndpointDnsRecords-', parameters('privateEndpointDnsRecordUniqueId'))]",
+                            "name": "[concat('EndpointDnsRecords-', parameters('sqlPrivateEndpointDnsRecordUniqueId'))]",
                             "type": "Microsoft.Resources/deployments",
                             "dependsOn": [
-                                "[parameters('privateLinkPrivateDnsZoneFQDN')]"
+                                "[parameters('sqlPrivateLinkPrivateDnsZoneFQDN')]"
                             ],
                             "properties": {
                                 "mode": "Incremental",
                                 "templatelink": {
                                     "contentVersion": "1.0.0.0",
-                                    "uri": "[parameters('privateDnsForPrivateEndpointTemplateLink')]"
+                                    "uri": "[parameters('sqlPrivateDnsForPrivateEndpointTemplateLink')]"
                                 },
                                 "parameters": {
                                     "privateDnsName": {
-                                        "value": "[parameters('privateLinkPrivateDnsZoneFQDN')]"
+                                        "value": "[parameters('sqlPrivateLinkPrivateDnsZoneFQDN')]"
                                     },
                                     "privateEndpointNicResourceId": {
-                                        "value": "[if(parameters('enablePrivateEndpoint'), reference(concat('Microsoft.Resources/deployments/', variables('privateEndpointTemplateName'))).outputs.networkInterfaceId.value, '')]"
+                                        "value": "[if(parameters('sqlEnablePrivateEndpoint'), reference(concat('Microsoft.Resources/deployments/', variables('privateEndpointTemplateName'))).outputs.networkInterfaceId.value, '')]"
                                     },
                                     "nicRecordsTemplateUri": {
-                                        "value": "[parameters('privateDnsForPrivateEndpointNicTemplateLink')]"
+                                        "value": "[parameters('sqlPrivateDnsForPrivateEndpointNicTemplateLink')]"
                                     },
                                     "ipConfigRecordsTemplateUri": {
-                                        "value": "[parameters('privateDnsForPrivateEndpointIpConfigTemplateLink')]"
+                                        "value": "[parameters('sqlPrivateDnsForPrivateEndpointIpConfigTemplateLink')]"
                                     },
                                     "uniqueId": {
-                                        "value": "[parameters('privateEndpointDnsRecordUniqueId')]"
+                                        "value": "[parameters('sqlPrivateEndpointDnsRecordUniqueId')]"
                                     },
                                     "existingRecords": {
                                         "value": {}
@@ -675,8 +672,8 @@
                     ]
                 }
             },
-            "subscriptionId": "[if(parameters('enablePrivateEndpoint'), parameters('privateEndpointVnetSubscriptionId'), variables('subscriptionId'))]",
-            "resourceGroup": "[if(parameters('enablePrivateEndpoint'), parameters('privateEndpointVnetResourceGroup'), variables('resourceGroupName'))]"
+            "subscriptionId": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetSubscriptionId'), variables('subscriptionId'))]",
+            "resourceGroup": "[if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointVnetResourceGroup'), variables('resourceGroupName'))]"
         }
     ],
     "variables": {
@@ -684,15 +681,15 @@
         "resourceGroupName": "[resourceGroup().name]",
         "uniqueStorage": "[uniqueString(variables('subscriptionId'), variables('resourceGroupName'), parameters('location'))]",
         "storageName": "[tolower(concat('sqlva', variables('uniqueStorage')))]",
-        "privateEndpointContainerTemplateName": "[concat('PrivateEndpointContainer-', if(parameters('enablePrivateEndpoint'), parameters('privateEndpointNestedTemplateId'), ''))]",
-        "subnetPoliciesTemplateName": "[concat('SubnetPolicies-', if(parameters('enablePrivateEndpoint'), parameters('privateEndpointNestedTemplateId'), ''))]",
-        "privateEndpointTemplateName": "[concat('PrivateEndpoint-', if(parameters('enablePrivateEndpoint'), parameters('privateEndpointNestedTemplateId'), ''))]",
+        "privateEndpointContainerTemplateName": "[concat('PrivateEndpointContainer-', if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointNestedTemplateId'), ''))]",
+        "subnetPoliciesTemplateName": "[concat('SubnetPolicies-', if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointNestedTemplateId'), ''))]",
+        "privateEndpointTemplateName": "[concat('PrivateEndpoint-', if(parameters('sqlEnablePrivateEndpoint'), parameters('sqlPrivateEndpointNestedTemplateId'), ''))]",
         "deploymentTemplateApi": "2018-05-01",
         "privateEndpointApi": "2019-04-01",
-        "privateEndpointId": "[if(parameters('enablePrivateEndpoint'), resourceId(parameters('privateEndpointSubscriptionId'), parameters('privateEndpointResourceGroup'), 'Microsoft.Network/privateEndpoints', parameters('privateEndpointName')), '')]",
-        "privateEndpointVnetId": "[if(parameters('enablePrivateEndpoint'), resourceId(parameters('privateEndpointVnetSubscriptionId'), parameters('privateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('privateEndpointVnetName')), '')]",
-        "privateEndpointSubnetResourceId": "[if(parameters('enablePrivateEndpoint'), resourceId(parameters('privateEndpointVnetSubscriptionId'), parameters('privateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('privateEndpointVnetName'), parameters('privateEndpointSubnetName')), '')]",
-        "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('serverName')))]",
+        "privateEndpointId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointSubscriptionId'), parameters('sqlPrivateEndpointResourceGroup'), 'Microsoft.Network/privateEndpoints', parameters('sqlPrivateEndpointName')), '')]",
+        "privateEndpointVnetId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointVnetSubscriptionId'), parameters('sqlPrivateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('sqlPrivateEndpointVnetName')), '')]",
+        "privateEndpointSubnetResourceId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointVnetSubscriptionId'), parameters('sqlPrivateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('sqlPrivateEndpointVnetName'), parameters('sqlPrivateEndpointSubnetName')), '')]",
+        "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('sqlServerName')))]",
         "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]"
     }
 }

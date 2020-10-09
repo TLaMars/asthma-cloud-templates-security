@@ -44,133 +44,133 @@
         "funcExtensionVersion": {
             "value": "~3"
         },
-        "administratorLogin": {
-            "value": "testingSqlServer"
-        },
-        "administratorLoginPassword": {
+        "sqlAdministratorLogin": {
             "value": null
         },
-        "collation": {
+        "sqlAdministratorLoginPassword": {
+            "value": null
+        },
+        "sqlCollation": {
             "value": "SQL_Latin1_General_CP1_CI_AS"
         },
-        "databaseName": {
+        "sqlDatabaseName": {
             "value": "testing"
         },
-        "tier": {
+        "sqlTier": {
             "value": "Basic"
         },
-        "skuName": {
+        "sqlSkuName": {
             "value": "Basic"
         },
-        "maxSizeBytes": {
+        "sqlMaxSizeBytes": {
             "value": 2147483648
         },
-        "sampleName": {
+        "sqlSampleName": {
             "value": ""
         },
-        "serverName": {
+        "sqlServerName": {
             "value": "testgingsqlserver13"
         },
-        "licenseType": {
+        "sqlLicenseType": {
             "value": ""
         },
-        "readScaleOut": {
+        "sqlReadScaleOut": {
             "value": "Disabled"
         },
-        "zoneRedundant": {
+        "sqlZoneRedundant": {
             "value": false
         },
-        "numberOfReplicas": {
+        "sqlNumberOfReplicas": {
             "value": 0
         },
-        "enableADS": {
+        "sqlEnableADS": {
             "value": false
         },
-        "allowAzureIps": {
+        "sqlAllowAzureIps": {
             "value": true
         },
-        "allowClientIp": {
+        "sqlAllowClientIp": {
             "value": false
         },
-        "clientIpValue": {
+        "sqlClientIpValue": {
             "value": "84.106.178.21"
         },
-        "databaseTags": {
+        "sqlDatabaseTags": {
             "value": {}
         },
-        "serverTags": {
+        "sqlServerTags": {
             "value": {}
         },
-        "enableVA": {
+        "sqlEnableVA": {
             "value": false
         },
-        "useVAManagedIdentity": {
+        "sqlUseVAManagedIdentity": {
             "value": false
         },
-        "enablePrivateEndpoint": {
+        "sqlEnablePrivateEndpoint": {
             "value": false
         },
-        "privateEndpointNestedTemplateId": {
+        "sqlPrivateEndpointNestedTemplateId": {
             "value": "pe-53973159-65fd-4b45-b4df-5b26c8c0e017"
         },
-        "privateEndpointSubscriptionId": {
+        "sqlPrivateEndpointSubscriptionId": {
             "value": ""
         },
-        "privateEndpointResourceGroup": {
+        "sqlPrivateEndpointResourceGroup": {
             "value": ""
         },
-        "privateEndpointName": {
+        "sqlPrivateEndpointName": {
             "value": ""
         },
-        "privateEndpointLocation": {
+        "sqlPrivateEndpointLocation": {
             "value": ""
         },
-        "privateEndpointSubnetId": {
+        "sqlPrivateEndpointSubnetId": {
             "value": ""
         },
-        "privateLinkServiceName": {
+        "sqlPrivateLinkServiceName": {
             "value": ""
         },
-        "privateLinkServiceServiceId": {
+        "sqlPrivateLinkServiceServiceId": {
             "value": ""
         },
-        "privateEndpointVnetSubscriptionId": {
+        "sqlPrivateEndpointVnetSubscriptionId": {
             "value": ""
         },
-        "privateEndpointVnetResourceGroup": {
+        "sqlPrivateEndpointVnetResourceGroup": {
             "value": ""
         },
-        "privateEndpointVnetName": {
+        "sqlPrivateEndpointVnetName": {
             "value": ""
         },
-        "privateEndpointSubnetName": {
+        "sqlPrivateEndpointSubnetName": {
             "value": ""
         },
-        "enablePrivateDnsZone": {
+        "sqlEnablePrivateDnsZone": {
             "value": true
         },
-        "privateLinkPrivateDnsZoneFQDN": {
+        "sqlPrivateLinkPrivateDnsZoneFQDN": {
             "value": "privatelink.database.windows.net"
         },
-        "privateEndpointDnsRecordUniqueId": {
+        "sqlPrivateEndpointDnsRecordUniqueId": {
             "value": "53973159-65fd-4b45-b4df-5b26c8c0e01a"
         },
-        "privateEndpointTemplateLink": {
+        "sqlPrivateEndpointTemplateLink": {
             "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateEndpoint.json"
         },
-        "privateDnsForPrivateEndpointTemplateLink": {
+        "sqlPrivateDnsForPrivateEndpointTemplateLink": {
             "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpoint.json"
         },
-        "privateDnsForPrivateEndpointNicTemplateLink": {
+        "sqlPrivateDnsForPrivateEndpointNicTemplateLink": {
             "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpointNic.json"
         },
-        "privateDnsForPrivateEndpointIpConfigTemplateLink": {
+        "sqlPrivateDnsForPrivateEndpointIpConfigTemplateLink": {
             "value": "https://sqlazureextension.hosting.portal.azure.net/sqlazureextension/Content/2.1.0136478/DeploymentTemplates/PrivateDnsForPrivateEndpointIpConfig.json"
         },
-        "clientIpRuleName": {
+        "sqlClientIpRuleName": {
             "value": "ClientIp-2020-10-8_14-40-28"
         },
-        "storageAccountType": {
+        "sqlStorageAccountType": {
             "value": ""
         }
     }
