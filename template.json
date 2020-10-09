@@ -437,7 +437,7 @@
                     "tags": "[parameters('sqlDatabaseTags')]",
                     "name": "[parameters('sqlDatabaseName')]",
                     "properties": {
-                        "collation": "[parameters('collation')]",
+                        "collation": "[parameters('sqlCollation')]",
                         "maxSizeBytes": "[parameters('sqlMaxSizeBytes')]",
                         "sampleName": "[parameters('sqlSampleName')]",
                         "zoneRedundant": "[parameters('sqlZoneRedundant')]",
