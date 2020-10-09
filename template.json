@@ -282,7 +282,7 @@
                         },
                         {
                             "name": "SqlConnectionString",
-                            "value": "[concat('Server=tcp:', parameters('serverName'), '.database.windows.net,1433;Initial Catalog=', parameters('databaseName'), ';Persist Security Info=False;User ID=', parameters('administratorLogin'), ';Password=', parameters('administratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
+                            "value": "[concat('Server=tcp:', parameters('sqlServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('sqlDatabaseName'), ';Persist Security Info=False;User ID=', parameters('sqlAdministratorLogin'), ';Password=', parameters('sqlAdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
                         }
                     ]
                 },
@@ -322,7 +322,7 @@
                         "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('funcName')), '8be4')]",
                         "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
                         "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('funcName')), '2014-04-01').InstrumentationKey]",
-                        "SqlConnectionString": "[concat('Server=tcp:', parameters('serverName'), '.database.windows.net,1433;Initial Catalog=', parameters('databaseName'), ';Persist Security Info=False;User ID=', parameters('administratorLogin'), ';Password=', parameters('administratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
+                        "SqlConnectionString": "[concat('Server=tcp:', parameters('sqlServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('sqlDatabaseName'), ';Persist Security Info=False;User ID=', parameters('sqlAdministratorLogin'), ';Password=', parameters('sqlAdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
                         "StickySetting": "StuckToProduction"
                     }
                 },
@@ -356,7 +356,7 @@
                                 "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('funcName')), 'testing')]",
                                 "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
                                 "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('funcName')), '2014-04-01').InstrumentationKey]",
-                                "SqlConnectionString": "[concat('Server=tcp:', parameters('serverName'), '.database.windows.net,1433;Initial Catalog=', parameters('databaseName'), ';Persist Security Info=False;User ID=', parameters('administratorLogin'), ';Password=', parameters('administratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
+                                "SqlConnectionString": "[concat('Server=tcp:', parameters('sqlServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('sqlDatabaseName'), ';Persist Security Info=False;User ID=', parameters('sqlAdministratorLogin'), ';Password=', parameters('sqlAdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
                                 "StickySetting": "[concat('StuckTo',parameters('funcSlotName'))]"
                             }
                         }
