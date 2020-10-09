@@ -603,7 +603,7 @@
             "apiVersion": "[variables('deploymentTemplateApi')]",
             "name": "[concat('PrivateDns-', parameters('sqlPrivateEndpointNestedTemplateId'))]",
             "dependsOn": [
-                "[variables('sqlPrivateEndpointTemplateName')]"
+                "[variables('privateEndpointTemplateName')]"
             ],
             "properties": {
                 "mode": "Incremental",
