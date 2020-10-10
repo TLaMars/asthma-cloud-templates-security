@@ -54,7 +54,10 @@
             "value": "SQL_Latin1_General_CP1_CI_AS"
         },
         "sqlDatabaseName": {
-            "value": "testing"
+            "value": null
+        },
+        "sqlTestDatabaseName": {
+            "value": null
         },
         "sqlTier": {
             "value": "Basic"
@@ -69,7 +72,7 @@
             "value": ""
         },
         "sqlServerName": {
-            "value": "testgingsqlserver13"
+            "value": null
         },
         "sqlLicenseType": {
             "value": ""
@@ -176,6 +179,12 @@
         "cosmosName": {
             "value": null
         },
+        "cosmosDbName": {
+            "value": null
+        },
+        "cosmosDbTestName": {
+            "value": null
+        }, 
         "cosmosLocation": {
             "value": "westeurope"
         },
