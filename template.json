@@ -226,10 +226,10 @@
             "type": "string"
         },
         "cosmosDbName": {
-            "value": "string"
+            "type": "string"
         },
         "cosmosDbTestName": {
-            "value": "string"
+            "type": "string"
         }, 
         "cosmosLocation": {
             "type": "string"
