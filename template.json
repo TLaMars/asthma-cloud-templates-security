@@ -337,7 +337,7 @@
                         "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('funcName')), '2014-04-01').InstrumentationKey]",
                         "SqlConnectionString": "[concat('Server=tcp:', parameters('sqlServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('sqlDatabaseName'), ';Persist Security Info=False;User ID=', parameters('sqlAdministratorLogin'), ';Password=', parameters('sqlAdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
                         "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
-                        "CosmosEndpoint": "[reference(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').documentEndpoint]",
+                        "CosmosEndpoint": "[parameters('cosmosName'),'.documents.azure.com:443]",
                         "CosmosDbName": "[parameters('cosmosDbName')]",
                         "StickySetting": "StuckToProduction"
                     }
@@ -374,7 +374,7 @@
                                 "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('funcName')), '2014-04-01').InstrumentationKey]",
                                 "SqlConnectionString": "[concat('Server=tcp:', parameters('sqlServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('sqlTestDatabaseName'), ';Persist Security Info=False;User ID=', parameters('sqlAdministratorLogin'), ';Password=', parameters('sqlAdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
                                 "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
-                                "CosmosEndpoint": "[reference(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').documentEndpoint]",
+                                "CosmosEndpoint": "[parameters('cosmosName'),'.documents.azure.com:443]",
                                 "CosmosDbName": "[parameters('cosmosDbTestName')]",
                                 "StickySetting": "[concat('StuckTo',parameters('funcSlotName'))]"
                             }
