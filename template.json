@@ -315,7 +315,11 @@
                     },
                     "properties": {
                         "appSettingNames": [
-                            "StickySetting"
+                            "Environment",
+                            "SqlConnectionString",
+                            "CosmosPrimaryKey",
+                            "CosmosEndpoint",
+                            "CosmosDbName"
                         ]
                     }
                 },
@@ -339,7 +343,7 @@
                         "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
                         "CosmosEndpoint": "[concat('https://', parameters('cosmosName'), '.documents.azure.com:443/')]",
                         "CosmosDbName": "[parameters('cosmosDbName')]",
-                        "StickySetting": "StuckToProduction"
+                        "Environment": "Production"
                     }
                 },
                 {
@@ -376,7 +380,7 @@
                                 "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
                                 "CosmosEndpoint": "[concat('https://', parameters('cosmosName'), '.documents.azure.com:443/')]",
                                 "CosmosDbName": "[parameters('cosmosDbTestName')]",
-                                "StickySetting": "[concat('StuckTo',parameters('funcSlotName'))]"
+                                "Environment": "Testing"
                             }
                         }
                     ]
