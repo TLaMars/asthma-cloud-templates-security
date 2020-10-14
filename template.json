@@ -823,9 +823,6 @@
         "privateEndpointSubnetResourceId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointVnetSubscriptionId'), parameters('sqlPrivateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('sqlPrivateEndpointVnetName'), parameters('sqlPrivateEndpointSubnetName')), '')]",
         "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('sqlServerName')))]",
         "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]",
-        "urls": [
-            "[concat('https://', parameters('funcName'), '.azurewebsite.net')]",
-            "[concat('https://', parameters('funcSlotName'), '-', parameters('funcName'), '.azurewebsite.net')]"
-        ]
+        "urls": "[concat('https://', parameters('funcName'), '.azurewebsite.net')]"
     }
 }
