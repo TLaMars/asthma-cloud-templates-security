@@ -23,21 +23,6 @@
         "funcStorageAccountName": {
             "type": "string"
         },
-        "funcSku": {
-            "type": "string"
-        },
-        "funcSkuCode": {
-            "type": "string"
-        },
-        "funcWorkerSize": {
-            "type": "string"
-        },
-        "funcWorkerSizeId": {
-            "type": "string"
-        },
-        "funcNumberOfWorkers": {
-            "type": "string"
-        },
         "funcSlotName": {
             "type": "string"
         },
@@ -254,7 +239,6 @@
             "tags": {},
             "dependsOn": [
                 "[concat('microsoft.insights/components/', parameters('funcName'))]",
-                "[concat('Microsoft.Web/serverfarms/', parameters('funcHostingPlanName'))]",
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('funcStorageAccountName'))]"
             ],
             "properties": {
@@ -280,14 +264,6 @@
                         {
                             "name": "AzureWebJobsStorage",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        },
-                        {
-                            "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2019-06-01').keys[0].value,';EndpointSuffix=','core.windows.net')]"
-                        },
-                        {
-                            "name": "WEBSITE_CONTENTSHARE",
-                            "value": "[concat(toLower(parameters('funcName')), 'a47c')]"
                         },
                         {
                             "name": "SqlConnectionString",
@@ -335,8 +311,6 @@
                         "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
                         "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
                         "FUNCTIONS_EXTENSION_VERSION": "[parameters('funcExtensionVersion')]",
-                        "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('funcStorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('funcStorageAccountName')), '2015-05-01-preview').key1)]",
-                        "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('funcName')), '8be4')]",
                         "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
                         "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('funcName')), '2014-04-01').InstrumentationKey]",
                         "SqlConnectionString": "[concat('Server=tcp:', parameters('sqlServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('sqlDatabaseName'), ';Persist Security Info=False;User ID=', parameters('sqlAdministratorLogin'), ';Password=', parameters('sqlAdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
@@ -386,25 +360,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "apiVersion": "2018-11-01",
-            "name": "[parameters('funcHostingPlanName')]",
-            "type": "Microsoft.Web/serverfarms",
-            "location": "[parameters('location')]",
-            "kind": "",
-            "tags": {},
-            "dependsOn": [],
-            "properties": {
-                "name": "[parameters('funcHostingPlanName')]",
-                "workerSize": "[parameters('funcWorkerSize')]",
-                "workerSizeId": "[parameters('funcWorkerSizeId')]",
-                "numberOfWorkers": "[parameters('funcNumberOfWorkers')]"
-            },
-            "sku": {
-                "Tier": "[parameters('funcSku')]",
-                "Name": "[parameters('funcSkuCode')]"
-            }
         },
         {
             "apiVersion": "2015-05-01",
