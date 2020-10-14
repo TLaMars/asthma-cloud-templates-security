@@ -771,11 +771,7 @@
                 },
                 "cors": [
                     {
-                        "allowedOrigins": [
-                            "http://localhost:7071", 
-                            "[concat('https://', parameters('funcSlotName'), '-', parameters('funcName'), '.azurewebsites.net')]", 
-                            "[concat('https://', parameters('funcName'), '.azurewebsites.net')]"
-                        ]
+                        "allowedOrigins": "[variables('localhost'), variables('testingUrl'), variables('prodUrl')]"
                     }
                 ],
                 "isVirtualNetworkFilterEnabled": false,
@@ -826,6 +822,9 @@
         "privateEndpointVnetId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointVnetSubscriptionId'), parameters('sqlPrivateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('sqlPrivateEndpointVnetName')), '')]",
         "privateEndpointSubnetResourceId": "[if(parameters('sqlEnablePrivateEndpoint'), resourceId(parameters('sqlPrivateEndpointVnetSubscriptionId'), parameters('sqlPrivateEndpointVnetResourceGroup'), 'Microsoft.Network/virtualNetworks/subnets', parameters('sqlPrivateEndpointVnetName'), parameters('sqlPrivateEndpointSubnetName')), '')]",
         "uniqueRoleGuid": "[guid(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')), variables('storageBlobContributor'), resourceId('Microsoft.Sql/servers', parameters('sqlServerName')))]",
-        "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]"
+        "StorageBlobContributor": "[subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'ba92f5b4-2d11-453d-a403-e96b0029c9fe')]",
+        "localhost": "http://localhost:7071",
+        "testingUrl": "[concat('https://', parameters('funcSlotName'), '-', parameters('funcName'), '.azurewebsite.net')]",
+        "prodUrl": "[concat('https://', parameters('funcName'), '.azurewebsite.net')]"
     }
 }
