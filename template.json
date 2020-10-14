@@ -771,7 +771,7 @@
                 },
                 "cors": [
                     {
-                        "allowedOrigins": "[concat('https://', parameters('funcName'), '.azurewebsite.net')]"
+                        "allowedOrigins": "[concat('https://', parameters('funcName'), '.azurewebsite.net')], [concat('https://', parameters('funcSlotName'), '.azurewebsite.net')]"
                     }
                 ],
                 "isVirtualNetworkFilterEnabled": false,
