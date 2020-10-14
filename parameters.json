@@ -12,16 +12,31 @@
             "value": "testingcidc"
         },
         "funcHostingPlanName": {
-            "value": "ASP-asthmacloudproject-af8a"
+            "value": "testing-cidc"
         },
         "funcServerFarmResourceGroup": {
-            "value": "asthma-cloud-project"
+            "value": "testing"
         },
         "funcAlwaysOn": {
             "value": false
         },
         "funcStorageAccountName": {
             "value": "storageaccounttestib6e8"
+        },
+        "funcSku": {
+            "value": "Free"
+        },
+        "funcSkuCode": {
+            "value": "F1"
+        },
+        "funcWorkerSize": {
+            "value": "0"
+        },
+        "funcWorkerSizeId": {
+            "value": "0"
+        },
+        "funcNumberOfWorkers": {
+            "value": "1"
         },
         "funcSlotName": {
             "value": "testingProduction"
