@@ -771,7 +771,11 @@
                 },
                 "cors": [
                     {
-                        "allowedOrigins": "http://localhost:7071, [concat('https://', parameters('funcSlotName'), '-', parameters('funcName'), '.azurewebsites.net')], [concat('https://', parameters('funcName'), '.azurewebsites.net')]"
+                        "allowedOrigins": [
+                            "http://localhost:7071", 
+                            "[concat('https://', parameters('funcSlotName'), '-', parameters('funcName'), '.azurewebsites.net')]", 
+                            "[concat('https://', parameters('funcName'), '.azurewebsites.net')]"
+                        ]
                     }
                 ],
                 "isVirtualNetworkFilterEnabled": false,
