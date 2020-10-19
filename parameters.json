@@ -12,10 +12,10 @@
             "value": "asthma-app"
         },
         "funcHostingPlanName": {
-            "value": "ASP-asthmacloud-9219"
+            "value": "ASP-asthmacloud-a0a8"
         },
         "funcServerFarmResourceGroup": {
-            "value": "asthma-cloud-project"
+            "value": "asthma-cloud"
         },
         "funcAlwaysOn": {
             "value": false
