@@ -9,19 +9,19 @@
             "value": "West Europe"
         },
         "funcName": {
-            "value": "testingcidc"
+            "value": "asthma-app"
         },
         "funcHostingPlanName": {
-            "value": "ASP-testing-91f6"
+            "value": "ASP-asthmacloudproject-91f6"
         },
         "funcServerFarmResourceGroup": {
-            "value": "testing"
+            "value": "asthma-cloud-project"
         },
         "funcAlwaysOn": {
             "value": false
         },
         "funcStorageAccountName": {
-            "value": "storageaccounttestib6e8"
+            "value": "asthmacloudstorage"
         },
         "funcSku": {
             "value": "Dynamic"
@@ -94,9 +94,6 @@
         },
         "sqlAllowClientIp": {
             "value": false
-        },
-        "sqlClientIpValue": {
-            "value": "84.106.178.21"
         },
         "sqlDatabaseTags": {
             "value": {}
