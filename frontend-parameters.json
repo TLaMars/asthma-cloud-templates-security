@@ -12,10 +12,10 @@
             "value": "West Europe"
         },
         "hostingPlanName": {
-            "value": "ASP-asthmacloudproject-af8a"
+            "value": "ASP-asthmacloud-af8a"
         },
         "serverFarmResourceGroup": {
-            "value": "asthma-cloud-project"
+            "value": "asthma-cloud"
         },
         "alwaysOn": {
             "value": false
