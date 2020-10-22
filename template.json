@@ -388,6 +388,27 @@
             ]
         },
         {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2018-11-01",
+            "name": "[concat(parameters('funcName'), '/web')]",
+            "location": "West Europe",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('funcName'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "allowedOrigins": [
+                        "https://functions.azure.com",
+                        "https://functions-staging.azure.com",
+                        "https://functions-next.azure.com",
+                        "*",
+                        "http://localhost:3000"
+                    ],
+                    "supportCredentials": false
+                }
+            }
+        },
+        {
             "apiVersion": "2018-11-01",
             "name": "[parameters('funcHostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
