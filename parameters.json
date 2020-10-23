@@ -190,6 +190,9 @@
         },
         "firebaseCredentials": {
             "value": null
+        },
+        "environment": {
+            "value": null
         }
     }
 } 
