@@ -9,19 +9,19 @@
             "value": "West Europe"
         },
         "funcName": {
-            "value": "asthma-app"
+            "value": null
         },
         "funcHostingPlanName": {
-            "value": "ASP-asthmacloud-a0a8"
+            "value": null
         },
         "funcServerFarmResourceGroup": {
-            "value": "asthma-cloud"
+            "value": null
         },
         "funcAlwaysOn": {
             "value": false
         },
         "funcStorageAccountName": {
-            "value": "asthmacloudstorage"
+            "value": null
         },
         "funcSku": {
             "value": "Dynamic"
@@ -38,9 +38,6 @@
         "funcNumberOfWorkers": {
             "value": "1"
         },
-        "funcSlotName": {
-            "value": "testingProduction"
-        },
         "funcExtensionVersion": {
             "value": "~3"
         },
@@ -54,9 +51,6 @@
             "value": "SQL_Latin1_General_CP1_CI_AS"
         },
         "sqlDatabaseName": {
-            "value": null
-        },
-        "sqlTestDatabaseName": {
             "value": null
         },
         "sqlTier": {
@@ -179,9 +173,6 @@
         "cosmosDbName": {
             "value": null
         },
-        "cosmosDbTestName": {
-            "value": null
-        }, 
         "cosmosLocation": {
             "value": "westeurope"
         },
@@ -193,6 +184,9 @@
         },
         "cosmosIsZoneRedundant": {
             "value": "false"
+        },
+        "cosmosFreeTier": {
+            "value": false
         }
     }
 } 
