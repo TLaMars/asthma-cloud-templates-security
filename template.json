@@ -236,7 +236,7 @@
         },
         "cosmosFreeTier": {
             "type": "bool",
-            "default": false
+            "defaultValue": false
         }
     },
     "resources": [
