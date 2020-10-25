@@ -243,6 +243,9 @@
         },
         "environment": {
             "type": "string"
+        },
+        "cms-name": {
+            "value": null
         }
     },
     "resources": [
@@ -331,11 +334,7 @@
             "properties": {
                 "cors": {
                     "allowedOrigins": [
-                        "https://functions.azure.com",
-                        "https://functions-staging.azure.com",
-                        "https://functions-next.azure.com",
-                        "*",
-                        "http://localhost:3000"
+                        "[concat('https://', parameters('cmsName'), '.azurewebsites.net')]"
                     ],
                     "supportCredentials": false
                 }
@@ -697,7 +696,7 @@
                 },
                 "cors": [
                     {
-                        "allowedOrigins": "[concat('https://', parameters('funcName'), '.azurewebsite.net')]"
+                        "allowedOrigins": "[concat('https://', parameters('funcName'), '.azurewebsites.net')]"
                     }
                 ],
                 "isVirtualNetworkFilterEnabled": false,
