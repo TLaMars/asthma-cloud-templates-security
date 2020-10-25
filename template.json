@@ -245,7 +245,7 @@
             "type": "string"
         },
         "cms-name": {
-            "value": null
+            "type": "string"
         }
     },
     "resources": [
