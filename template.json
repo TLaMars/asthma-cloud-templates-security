@@ -334,7 +334,7 @@
             "properties": {
                 "cors": {
                     "allowedOrigins": [
-                        "[concat('https://', parameters('cmsName'), '.azurewebsites.net')]"
+                        "[concat('https://', parameters('cms-name'), '.azurewebsites.net')]"
                     ],
                     "supportCredentials": false
                 }
