@@ -246,6 +246,39 @@
         },
         "cms-name": {
             "type": "string"
+        },
+        "keyvaultName": {
+            "type": "string"
+        },
+        "keyvaultSku": {
+            "type": "string"
+        },
+        "kayvaultAccessPolicies": {
+            "type": "array"
+        },
+        "keyvaultTenant": {
+            "type": "string"
+        },
+        "keyvaultEnabledForDeployment": {
+            "type": "bool"
+        },
+        "keyvaultEnabledForTemplateDeployment": {
+            "type": "bool"
+        },
+        "keyvaultEnabledForDiskEncryption": {
+            "type": "bool"
+        },
+        "keyvaultEnableRbacAuthorization": {
+            "type": "bool"
+        },
+        "keyvaultEnableSoftDelete": {
+            "type": "bool"
+        },
+        "keyvaultSoftDeleteRetentionInDays": {
+            "type": "int"
+        },
+        "keyvaultNetworkAcls": {
+            "type": "object"
         }
     },
     "resources": [
@@ -732,6 +765,29 @@
                 "hidden-cosmos-mmspecial": "",
                 "CosmosAccountType": "Production"
             }
+        },
+        {
+            "apiVersion": "2018-02-14",
+            "name": "[parameters('keyvaultName')]",
+            "location": "[parameters('location')]",
+            "type": "Microsoft.KeyVault/vaults",
+            "properties": {
+                "enabledForDeployment": "[parameters('keyvaultEnabledForDeployment')]",
+                "enabledForTemplateDeployment": "[parameters('keyvaultEnabledForTemplateDeployment')]",
+                "enabledForDiskEncryption": "[parameters('keyvaultEnabledForDiskEncryption')]",
+                "enableRbacAuthorization": "[parameters('keyvaultEnableRbacAuthorization')]",
+                "accessPolicies": "[parameters('kayvaultAccessPolicies')]",
+                "tenantId": "[parameters('keyvaultTenant')]",
+                "sku": {
+                    "name": "[parameters('keyvaultSku')]",
+                    "family": "A"
+                },
+                "enableSoftDelete": "[parameters('keyvaultEnableSoftDelete')]",
+                "softDeleteRetentionInDays": "[parameters('keyvaultSoftDeleteRetentionInDays')]",
+                "networkAcls": "[parameters('keyvaultNetworkAcls')]"
+            },
+            "tags": {},
+            "dependsOn": []
         }
     ],
     "variables": {

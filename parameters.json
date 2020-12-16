@@ -196,6 +196,89 @@
         },
         "cms-name": {
             "value": null
+        },
+        "keyvaultName": {
+            "value": null
+        },
+        "keyvaultSku": {
+            "value": "Standard"
+        },
+        "keyvaultAccessPolicies": {
+            "value": [
+                {
+                    "objectId": "658116a2-3cf0-47b0-956a-d5bdf9ea2d6a",
+                    "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
+                    "permissions": {
+                        "keys": [
+                            "Get",
+                            "List",
+                            "Update",
+                            "Create",
+                            "Import",
+                            "Delete",
+                            "Recover",
+                            "Backup",
+                            "Restore"
+                        ],
+                        "secrets": [
+                            "Get",
+                            "List",
+                            "Set",
+                            "Delete",
+                            "Recover",
+                            "Backup",
+                            "Restore"
+                        ],
+                        "certificates": [
+                            "Get",
+                            "List",
+                            "Update",
+                            "Create",
+                            "Import",
+                            "Delete",
+                            "Recover",
+                            "Backup",
+                            "Restore",
+                            "ManageContacts",
+                            "ManageIssuers",
+                            "GetIssuers",
+                            "ListIssuers",
+                            "SetIssuers",
+                            "DeleteIssuers"
+                        ]
+                    },
+                    "applicationId": ""
+                }
+            ]
+        },
+        "keyvaultTenant": {
+            "value": "ad78d191-1044-4303-8212-b6f4dd7874bc"
+        },
+        "keyvaultEnabledForDeployment": {
+            "value": false
+        },
+        "keyvaultEnabledForTemplateDeployment": {
+            "value": false
+        },
+        "keyvaultEnabledForDiskEncryption": {
+            "value": false
+        },
+        "keyvaultEnableRbacAuthorization": {
+            "value": false
+        },
+        "keyvaultEnableSoftDelete": {
+            "value": true
+        },
+        "keyvaultSoftDeleteRetentionInDays": {
+            "value": 90
+        },
+        "keyvaultNetworkAcls": {
+            "value": {
+                "defaultAction": "allow",
+                "bypass": "AzureServices",
+                "ipRules": [],
+                "virtualNetworkRules": []
+            }
         }
     }
 } 
