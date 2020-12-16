@@ -253,7 +253,7 @@
         "keyvaultSku": {
             "type": "string"
         },
-        "kayvaultAccessPolicies": {
+        "keyvaultAccessPolicies": {
             "type": "array"
         },
         "keyvaultTenant": {
@@ -776,7 +776,7 @@
                 "enabledForTemplateDeployment": "[parameters('keyvaultEnabledForTemplateDeployment')]",
                 "enabledForDiskEncryption": "[parameters('keyvaultEnabledForDiskEncryption')]",
                 "enableRbacAuthorization": "[parameters('keyvaultEnableRbacAuthorization')]",
-                "accessPolicies": "[parameters('kayvaultAccessPolicies')]",
+                "accessPolicies": "[parameters('keyvaultAccessPolicies')]",
                 "tenantId": "[parameters('keyvaultTenant')]",
                 "sku": {
                     "name": "[parameters('keyvaultSku')]",
