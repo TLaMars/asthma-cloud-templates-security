@@ -206,6 +206,21 @@
         "keyvaultAccessPolicies": {
             "value": [
                 {
+                    "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
+                    "objectId": "d487721f-f742-46ea-bc3d-9af5d75567be",
+                    "permissions": {
+                        "keys": [
+                            "Get"
+                        ],
+                        "secrets": [
+                            "Get"
+                        ],
+                        "certificates": [
+                            "Get"
+                        ]
+                    }
+                },
+                {
                     "objectId": "658116a2-3cf0-47b0-956a-d5bdf9ea2d6a",
                     "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
                     "permissions": {
