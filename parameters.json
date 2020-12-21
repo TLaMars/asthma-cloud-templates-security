@@ -210,13 +210,16 @@
                     "objectId": "d487721f-f742-46ea-bc3d-9af5d75567be",
                     "permissions": {
                         "keys": [
-                            "Get"
+                            "Get",
+                            "List"
                         ],
                         "secrets": [
-                            "Get"
+                            "Get",
+                            "List"
                         ],
                         "certificates": [
-                            "Get"
+                            "Get",
+                            "List"
                         ]
                     }
                 },
