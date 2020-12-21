@@ -821,7 +821,7 @@
         {
             "type": "Microsoft.KeyVault/vaults/secrets",
             "apiVersion": "2018-02-14",
-            "name": "[concat(parameters('keyvaultName'), '/', parameters('redisName'))]",
+            "name": "[concat(parameters('keyvaultName'), '/Cache-Key')]",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.KeyVault/vaults', parameters('keyvaultName'))]"       
