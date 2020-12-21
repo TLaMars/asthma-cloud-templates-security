@@ -221,6 +221,21 @@
                     }
                 },
                 {
+                    "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
+                    "objectId": "5302a1a5-1852-497a-abff-6afe5c12f848",
+                    "permissions": {
+                        "keys": [
+                            "Get"
+                        ],
+                        "secrets": [
+                            "Get"
+                        ],
+                        "certificates": [
+                            "Get"
+                        ]
+                    }
+                },
+                {
                     "objectId": "658116a2-3cf0-47b0-956a-d5bdf9ea2d6a",
                     "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
                     "permissions": {

@@ -290,6 +290,11 @@
             "name": "[parameters('funcName')]",
             "type": "Microsoft.Web/sites",
             "kind": "functionapp",
+            "identity": {
+                "principalId": "5302a1a5-1852-497a-abff-6afe5c12f848",
+                "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
+                "type": "SystemAssigned"
+            },
             "location": "[parameters('location')]",
             "tags": {},
             "dependsOn": [
