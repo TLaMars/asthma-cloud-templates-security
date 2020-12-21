@@ -792,13 +792,13 @@
         {
             "type": "Microsoft.KeyVault/vaults/secrets",
             "apiVersion": "2018-02-14",
-            "name": "[concat(parameters('keyvaultName'), '/', 'test')]",
+            "name": "[concat(parameters('keyvaultName'), '/SqlConnectionString')]",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.KeyVault/vaults', parameters('keyvaultName'))]"
             ],
             "properties": {
-                "value": "test"
+                "value": "[concat('Server=tcp:', parameters('sqlServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('sqlDatabaseName'), ';Persist Security Info=False;User ID=', parameters('sqlAdministratorLogin'), ';Password=', parameters('sqlAdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]"
             }
         }
     ],
