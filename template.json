@@ -238,9 +238,6 @@
             "type": "bool",
             "defaultValue": false
         },
-        "firebaseCredentials": {
-            "type": "string"
-        },
         "environment": {
             "type": "string"
         },
@@ -340,10 +337,6 @@
                         {
                             "name": "CosmosDbName",
                             "value": "[parameters('cosmosDbName')]"
-                        },
-                        {
-                            "name": "FirebaseCredentials",
-                            "value": "[parameters('firebaseCredentials')]"
                         },
                         {
                             "name": "Environment",
