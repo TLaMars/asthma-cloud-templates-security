@@ -279,6 +279,9 @@
                 "ipRules": [],
                 "virtualNetworkRules": []
             }
+        },
+        "redisName": {
+            "value": null
         }
     }
 } 

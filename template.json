@@ -279,6 +279,9 @@
         },
         "keyvaultNetworkAcls": {
             "type": "object"
+        },
+        "redisName": {
+            "type": "string"
         }
     },
     "resources": [
@@ -765,6 +768,24 @@
                 "hidden-cosmos-mmspecial": "",
                 "CosmosAccountType": "Production"
             }
+        },
+        {
+            "name": "[parameters('redisName')]",
+            "type": "Microsoft.Cache/redis",
+            "apiVersion": "2020-06-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "properties": {
+                "sku": {
+                    "name": "Standard",
+                    "family": "C",
+                    "capacity": 0
+                },
+                "redisConfiguration": {},
+                "enableNonSslPort": false,
+                "redisVersion": "4"
+            },
+            "tags": {}
         },
         {
             "apiVersion": "2018-02-14",
