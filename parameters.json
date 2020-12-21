@@ -188,9 +188,6 @@
         "cosmosFreeTier": {
             "value": false
         },
-        "firebaseCredentials": {
-            "value": null
-        },
         "environment": {
             "value": null
         },
