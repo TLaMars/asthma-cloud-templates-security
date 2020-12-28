@@ -204,6 +204,42 @@
             "value": [
                 {
                     "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
+                    "objectId": "4a45353c-fcc2-4328-86cb-966927d90f2d",
+                    "permissions": {
+                        "keys": [
+                            "Get",
+                            "List"
+                        ],
+                        "secrets": [
+                            "Get",
+                            "List"
+                        ],
+                        "certificates": [
+                            "Get",
+                            "List"
+                        ]
+                    }
+                },
+                {
+                    "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
+                    "objectId": "c59f2c0f-d6e9-4739-9c39-91c5d586237b",
+                    "permissions": {
+                        "keys": [
+                            "Get",
+                            "List"
+                        ],
+                        "secrets": [
+                            "Get",
+                            "List"
+                        ],
+                        "certificates": [
+                            "Get",
+                            "List"
+                        ]
+                    }
+                },
+                {
+                    "tenantId": "ad78d191-1044-4303-8212-b6f4dd7874bc",
                     "objectId": "d487721f-f742-46ea-bc3d-9af5d75567be",
                     "permissions": {
                         "keys": [
